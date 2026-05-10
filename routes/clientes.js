@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-// Obtener clientes
+// GET
 router.get('/', (req, res) => {
    
     res.json({
@@ -10,14 +10,28 @@ router.get('/', (req, res) => {
     });
 });
 
-// Registrar cliente
+// POST
 router.post('/', (req, res) => {
-
-    const datos = req.body;
-    
+      
     res.json({
         mensaje: 'Cliente registrado',
-        datos: datos
+        datos: req.body
+    });
+});
+
+// PUT
+router.put('/:id', (req, res) => {
+
+    res.json({
+        mensaje: 'Cliente actualizado'
+    });
+});
+
+// DELETE
+router.delete('/:id', (req, res) => {
+    
+    res.json({
+        mensaje: 'Cliente eliminado'
     });
 });
 
